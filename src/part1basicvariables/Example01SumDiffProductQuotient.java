@@ -1,4 +1,4 @@
-package part1.basic.variables;
+package part1basicvariables;
 
 import java.util.Scanner;
     public class Example01SumDiffProductQuotient {
