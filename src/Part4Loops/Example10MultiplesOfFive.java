@@ -1,7 +1,6 @@
 package Part4Loops;
 import java.util.Scanner;
-
-public class Example0MultiplesOfFive {
+public class Example10MultiplesOfFive {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập N: ");
