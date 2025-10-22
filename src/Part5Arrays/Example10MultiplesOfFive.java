@@ -1,4 +1,4 @@
-package Part4Loops;
+package Part5Arrays;
 import java.util.Scanner;
 public class Example10MultiplesOfFive {
     public static void main(String[] args) {

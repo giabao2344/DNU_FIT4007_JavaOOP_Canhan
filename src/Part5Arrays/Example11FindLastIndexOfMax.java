@@ -1,7 +1,8 @@
-package Part4Loops;
+package Part5Arrays;
 import java.util.Scanner;
-public class Example07FindMinMax {
-    public static void main(String[] args){
+
+public class Example11FindLastIndexOfMax {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập N: ");
         int n = sc.nextInt();
@@ -12,14 +13,16 @@ public class Example07FindMinMax {
             a[i] = sc.nextInt();
         }
 
-        int min = a[0], max = a[0];
+        int max = a[0], index = 0;
         for (int i = 1; i < n; i++) {
-            if (a[i] < min) min = a[i];
-            if (a[i] > max) max = a[i];
+            if (a[i] >= max) {
+                max = a[i];
+                index = i;
+            }
         }
 
-        System.out.println("Giá trị nhỏ nhất: " + min);
         System.out.println("Giá trị lớn nhất: " + max);
+        System.out.println("Chỉ số của phần tử lớn nhất cuối cùng: " + index);
     }
 }
 

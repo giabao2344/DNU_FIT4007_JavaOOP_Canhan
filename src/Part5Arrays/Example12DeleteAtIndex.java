@@ -1,4 +1,4 @@
-package Part4Loops;
+package Part5Arrays;
 import java.util.Scanner;
 public class Example12DeleteAtIndex {
     public static void main(String[] args) {
