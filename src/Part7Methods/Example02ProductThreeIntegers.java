@@ -1,6 +1,6 @@
 package Part7Methods;
 
-public class Ex02ProductThreeIntegers {
+public class Example02ProductThreeIntegers {
     static int product(int a, int b, int c) {
         return a * b * c;
     }
