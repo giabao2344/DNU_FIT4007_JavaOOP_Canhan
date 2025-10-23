@@ -14,4 +14,3 @@ public class Example15ConsecSum {
         System.out.println("Tổng = " + sum);
     }
 }
-}
