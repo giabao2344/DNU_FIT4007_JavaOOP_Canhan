@@ -4,6 +4,9 @@ body, html {
     background-color: #000;
     color: #fff;
     font-family: sans-serif;
+      max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 header {
@@ -15,21 +18,21 @@ header {
 
 .logo { font-weight: bold; font-size: 24px; letter-spacing: -2px; }
 
-/* Section cố định hình nền */
+
 .panel {
     height: 100vh;
     width: 100%;
     position: relative;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Giữ ảnh đứng yên khi cuộn */
+    background-attachment: fixed; 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-/* Hiệu ứng làm mờ nhẹ nền để nổi bật chữ */
+
 .panel::before {
     content: '';
     position: absolute;
@@ -43,7 +46,7 @@ header {
     max-width: 800px;
 }
 
-/* Hiệu ứng chữ HOVER giống Poison Studio */
+
 .hover-text {
     font-size: 10vw;
     font-weight: 900;
@@ -56,8 +59,7 @@ header {
 
 .hover-text:hover {
     transform: scale(1.05);
-    -webkit-text-stroke: 1px #fff;
-    /* Hiệu ứng biến mất màu giữa hoặc đổi màu */
+     -webkit-text-stroke: 1px #fff;
     color: transparent; 
     letter-spacing: 5px;
 }
@@ -74,7 +76,7 @@ header {
 .poison-footer {
     background-color: #000;
     color: #fff;
-    padding: 100px 50px 0 50px; /* Padding dưới bằng 0 để chữ to sát đáy */
+    padding: 100px 50px 0 50px; 
     font-family: 'Inter', sans-serif;
 }
 
@@ -86,7 +88,7 @@ header {
     padding-bottom: 50px;
 }
 
-/* Cột menu lớn bên trái */
+
 .main-links a {
     display: block;
     font-size: 40px;
@@ -103,7 +105,7 @@ header {
     color: #ff0055;
 }
 
-/* Cột link nhỏ ở giữa */
+
 .sub-links p {
     font-size: 14px;
     color: #ccc;
@@ -111,7 +113,7 @@ header {
     cursor: pointer;
 }
 
-/* Cột giải thưởng */
+
 .award-badge {
     display: flex;
     align-items: center;
@@ -134,7 +136,7 @@ header {
     font-size: 20px;
 }
 
-/* Phần thông tin liên hệ */
+
 .footer-mid {
     display: flex;
     justify-content: space-between;
@@ -145,16 +147,35 @@ header {
 .contact-info p { margin-bottom: 20px; font-size: 14px; }
 .contact-info a { color: #fff; text-decoration: underline; }
 
-/* CHỮ POISON KHỔNG LỒ */
+
 .footer-big-text {
-    font-size: 22vw; /* Chữ cực lớn theo chiều rộng màn hình */
+    font-size: 22vw; 
     font-weight: 900;
     line-height: 0.8;
     letter-spacing: -1vw;
     text-align: center;
     margin-top: 20px;
     padding-bottom: 20px;
+  position: relative;
+  color: #222; 
+  background-image: linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-size: 0% 100%; 
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: background-size 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+.footer-big-text:hover {
+  background-size: 100% 100%; 
+}
+
+.ter-big-text:hover {
+  color: #fff;
+  -webkit-text-stroke: 1px #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
 .socials .icons {
     display: flex;
     gap: 20px;
@@ -165,17 +186,17 @@ header {
     color: #fff;
     font-size: 22px;
     text-decoration: none;
-    opacity: 0.6; /* Mặc định hơi mờ giống site gốc */
+    opacity: 0.6; 
     transition: all 0.3s ease;
 }
 
 .socials .icons a:hover {
     opacity: 1;
-    transform: translateY(-3px); /* Nhảy nhẹ lên khi hover */
-    color: #ff0055; /* Màu hồng đặc trưng của Poison */
+    transform: translateY(-3px); 
+    color: #ff0055; 
 }
 
-/* Riêng cho logo X và GitHub để trông cân đối hơn */
+
 .fa-x-twitter {
     font-size: 20px; 
 }
@@ -208,7 +229,7 @@ header {
     overflow: hidden;
 }
 
-/* --- Dải Băng Chạy (Ticker) --- */
+
 @keyframes ticker-swipe {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -220,7 +241,7 @@ header {
     animation: ticker-swipe 30s linear infinite;
 }
 
-/* --- Footer Poison Style --- */
+
 .poison-footer {
     background-color: #000;
     padding: 100px 50px 20px;
@@ -246,13 +267,13 @@ header {
     margin-top: 20px; color: #111;
 }
 
-/* --- Custom Cursor --- */
+
 .cursor2 {
     width: 20px; height: 20px; background: #fff; border-radius: 50%;
     position: fixed; pointer-events: none; z-index: 9999; 
     mix-blend-difference: difference;
 }
-/* My Work Section Customization */
+
 .my-work-section {
     background-color: var(--bg-dark);
 }
@@ -261,19 +282,19 @@ header {
     cursor: pointer;
 }
 
-/* Hiệu ứng Zoom ảnh khi hover vào container */
+
 .work-item .img-container img {
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
 }
 
-/* Tạo độ sâu cho lưới hình ảnh */
+
 @media (min-width: 768px) {
     .work-item:nth-child(even) {
-        transform: translateY(100px); /* Đẩy các item bên phải xuống một chút */
+        transform: translateY(100px); 
     }
 }
 
-/* Hiệu ứng tag năm (Year tag) */
+
 .work-item span {
     transition: all 0.3s ease;
 }
@@ -292,7 +313,11 @@ body {
   background: #000;
   overflow-x: hidden;
   font-family: Arial, sans-serif;
+ overflow-x: hidden;
+ overflow-y: auto;
+ min-height: 100vh;
 }
+
 
 /* MARQUEE */
 .marquee {
@@ -316,13 +341,13 @@ body {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* HOVER PHÓNG TO */
+
 .track img:hover {
   transform: scale(1.15);
   z-index: 10;
 }
 
-/* CHẠY VĨNH VIỄN */
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -332,7 +357,7 @@ body {
   }
 }
 
-/* LIGHTBOX */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -389,7 +414,7 @@ body {
 .service-row .absolute {
     pointer-events: none;
 }
-/* Pre-loader Styles */
+
 .fixed-loader {
     position: fixed;
     top: 0;
@@ -445,30 +470,29 @@ body {
     color: rgba(255, 255, 255, 0.3);
 }
 
-/* Chặn cuộn khi đang load */
+
 #loader {
     position: fixed;
     inset: 0;
     z-index: 9999;
     background: #000;
-    /* Đảm bảo có chiều cao 100% để che toàn màn hình */
+    
     height: 100vh; 
     width: 100vw;
 }
-/* Chỉ chặn cuộn khi body có class .loading */
-body.loading {
-    overflow: hidden !important;
-    height: 100vh !important;
+
+body {
+ 
+
+  overflow-x: hidden; /* Chỉ mất thanh cuộn ngang (thường dùng nhất) */
 }
 
-/* Mặc định body phải cuộn được */
-body {
-    overflow-x: hidden;
-    overflow-y: auto;
-    min-height: 100vh;
+body::-webkit-scrollbar {
+  display: none;
 }
-html, body {
-    max-width: 100%;
-    overflow-x: hidden; /* Chặn tuyệt đối việc cuộn ngang */
-    position: relative;
+
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;  
 }
