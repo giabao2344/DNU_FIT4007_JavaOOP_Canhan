@@ -1,0 +1,474 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex; justify-content: space-between;
+    padding: 40px; z-index: 100;
+}
+
+.logo { font-weight: bold; font-size: 24px; letter-spacing: -2px; }
+
+/* Section cố định hình nền */
+.panel {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Giữ ảnh đứng yên khi cuộn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hiệu ứng làm mờ nhẹ nền để nổi bật chữ */
+.panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* Hiệu ứng chữ HOVER giống Poison Studio */
+.hover-text {
+    font-size: 10vw;
+    font-weight: 900;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    color: white;
+}
+
+.hover-text:hover {
+    transform: scale(1.05);
+    -webkit-text-stroke: 1px #fff;
+    /* Hiệu ứng biến mất màu giữa hoặc đổi màu */
+    color: transparent; 
+    letter-spacing: 5px;
+}
+
+.footer-bottom {
+    position: fixed;
+    bottom: 0; width: 100%;
+    display: flex; justify-content: space-between;
+    padding: 20px 40px;
+    font-size: 12px;
+    z-index: 100;
+    pointer-events: none;
+}
+.poison-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 100px 50px 0 50px; /* Padding dưới bằng 0 để chữ to sát đáy */
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 50px;
+}
+
+/* Cột menu lớn bên trái */
+.main-links a {
+    display: block;
+    font-size: 40px;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    transition: 0.3s;
+}
+
+.main-links a:hover {
+    padding-left: 20px;
+    color: #ff0055;
+}
+
+/* Cột link nhỏ ở giữa */
+.sub-links p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+/* Cột giải thưởng */
+.award-badge {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.wreath {
+    width: 40px;
+    filter: invert(1);
+    margin-right: 10px;
+}
+
+.socials { margin-top: 50px; }
+.socials .icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* Phần thông tin liên hệ */
+.footer-mid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 40px 0;
+}
+
+.contact-info p { margin-bottom: 20px; font-size: 14px; }
+.contact-info a { color: #fff; text-decoration: underline; }
+
+/* CHỮ POISON KHỔNG LỒ */
+.footer-big-text {
+    font-size: 22vw; /* Chữ cực lớn theo chiều rộng màn hình */
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -1vw;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.socials .icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.socials .icons a {
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    opacity: 0.6; /* Mặc định hơi mờ giống site gốc */
+    transition: all 0.3s ease;
+}
+
+.socials .icons a:hover {
+    opacity: 1;
+    transform: translateY(-3px); /* Nhảy nhẹ lên khi hover */
+    color: #ff0055; /* Màu hồng đặc trưng của Poison */
+}
+
+/* Riêng cho logo X và GitHub để trông cân đối hơn */
+.fa-x-twitter {
+    font-size: 20px; 
+}
+.hover-text a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+* --- Section & Images --- */
+.panel {
+    height: 100vh; width: 100%;
+    position: relative;
+    background-size: cover; background-position: center;
+    background-attachment: fixed;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.panel::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.content { position: relative; z-index: 2; max-width: 800px; text-align: center; }
+
+.img-container { 
+    position: relative; 
+    background: #111; 
+    border: 1px solid rgba(255,255,255,0.05); 
+    overflow: hidden;
+}
+
+/* --- Dải Băng Chạy (Ticker) --- */
+@keyframes ticker-swipe {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.ticker-content {
+    display: flex;
+    width: max-content;
+    animation: ticker-swipe 30s linear infinite;
+}
+
+/* --- Footer Poison Style --- */
+.poison-footer {
+    background-color: #000;
+    padding: 100px 50px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px; border-bottom: 1px solid #222; padding-bottom: 50px;
+}
+
+.main-links a {
+    display: block; font-size: 40px; font-weight: 900;
+    color: #fff; text-decoration: none; margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.main-links a:hover { padding-left: 20px; color: var(--poison-pink); }
+
+.footer-big-text {
+    font-size: 22vw; font-weight: 900; line-height: 0.8;
+    letter-spacing: -1vw; text-align: center;
+    margin-top: 20px; color: #111;
+}
+
+/* --- Custom Cursor --- */
+.cursor2 {
+    width: 20px; height: 20px; background: #fff; border-radius: 50%;
+    position: fixed; pointer-events: none; z-index: 9999; 
+    mix-blend-difference: difference;
+}
+/* My Work Section Customization */
+.my-work-section {
+    background-color: var(--bg-dark);
+}
+
+.work-item {
+    cursor: pointer;
+}
+
+/* Hiệu ứng Zoom ảnh khi hover vào container */
+.work-item .img-container img {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+/* Tạo độ sâu cho lưới hình ảnh */
+@media (min-width: 768px) {
+    .work-item:nth-child(even) {
+        transform: translateY(100px); /* Đẩy các item bên phải xuống một chút */
+    }
+}
+
+/* Hiệu ứng tag năm (Year tag) */
+.work-item span {
+    transition: all 0.3s ease;
+}
+
+.work-item:hover span {
+    background-color: #fff;
+    color: #000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* MARQUEE */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.track {
+  display: flex;
+  gap: 40px;
+  animation: scroll 25s linear infinite;
+}
+
+.track img {
+  width: 520px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* HOVER PHÓNG TO */
+.track img:hover {
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+/* CHẠY VĨNH VIỄN */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+.zoom-img {
+  width: 300px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.zoom-img:hover {
+  transform: scale(1.3);
+}
+.service-row h3 {
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.service-row:hover h3 {
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.service-row .absolute {
+    pointer-events: none;
+}
+/* Pre-loader Styles */
+.fixed-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+#loader-perc {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.loader-bar-container {
+    width: 200px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#loader-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #22d3ee; /* Màu Cyan-400 */
+    transform: translateX(-100%);
+}
+
+.loader-tagline {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Chặn cuộn khi đang load */
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000;
+    /* Đảm bảo có chiều cao 100% để che toàn màn hình */
+    height: 100vh; 
+    width: 100vw;
+}
+/* Chỉ chặn cuộn khi body có class .loading */
+body.loading {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+/* Mặc định body phải cuộn được */
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Chặn tuyệt đối việc cuộn ngang */
+    position: relative;
+}
